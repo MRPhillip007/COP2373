@@ -1,7 +1,7 @@
 """
 Name: Pylyp Lyamov
 Date created: August 30, 2026
-Course: COP2373 - Programming Exercise 2
+Course: COP2373 - Programming Exercise 1
 
 Program description:
     This program runs the pre-sale for a limited number of cinema tickets.
