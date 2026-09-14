@@ -110,7 +110,7 @@ def run_ticket_presale(total_tickets=10, max_per_buyer=4):
         max_per_buyer (int): The largest number of tickets one buyer may purchase.
 
     Variables:
-        tickets_sold (int): Accumulator that adds up every ticket sold so far.
+        tickets_purchased (int): Accumulator that adds up every ticket sold so far.
         buyer_count (int): Accumulator that counts how many buyers have purchased.
         tickets_remaining (int): The tickets still available at that point in the sale.
         requested (int): The number of tickets the current buyer purchased.
@@ -130,7 +130,7 @@ def run_ticket_presale(total_tickets=10, max_per_buyer=4):
         int: The total number of buyers who purchased tickets.
     """
     # Both accumulators start at zero because nothing has been sold yet.
-    tickets_sold = 0
+    tickets_purchased = 0
     buyer_count = 0
 
     # State the two rules of the pre-sale before the first buyer is served.
@@ -139,9 +139,9 @@ def run_ticket_presale(total_tickets=10, max_per_buyer=4):
           f"and each buyer may purchase up to {max_per_buyer} tickets.")
 
     # The pre-sale continues until the accumulator shows every ticket is sold.
-    while tickets_sold < total_tickets:
+    while tickets_purchased < total_tickets:
         # Recalculate what is left so the next buyer is offered a truthful limit.
-        tickets_remaining = total_tickets - tickets_sold
+        tickets_remaining = total_tickets - tickets_purchased
 
         # Number the prompt so each buyer knows it is their turn.
         print(f"\nBuyer {buyer_count + 1}:")
@@ -149,9 +149,9 @@ def run_ticket_presale(total_tickets=10, max_per_buyer=4):
 
         # Record the sale in both accumulators, then refresh the count of
         # what is left so the buyer is told the truth about availability.
-        tickets_sold += requested
+        tickets_purchased += requested
         buyer_count += 1
-        tickets_remaining = total_tickets - tickets_sold
+        tickets_remaining = total_tickets - tickets_purchased
 
         # Confirm the purchase and report the remaining tickets, which is
         # the figure the buyer needs after every single sale.
