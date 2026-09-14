@@ -5,7 +5,7 @@ Course: COP2373 - Programming Exercise 1
 
 Program description:
     This program runs the pre-sale for a limited number of cinema tickets.
-    Only 20 tickets exist for the showing, and no single buyer may purchase
+    Only 10 tickets exist for the showing, and no single buyer may purchase
     more than 4 of them. The program asks each buyer in turn how many
     tickets they want, reports how many tickets are still available after
     that purchase, and continues until every ticket has been sold. Once the
@@ -100,7 +100,7 @@ def get_ticket_request(tickets_remaining, max_per_buyer):
                 return requested
 
 
-def run_ticket_presale(total_tickets=20, max_per_buyer=4):
+def run_ticket_presale(total_tickets=10, max_per_buyer=4):
     """
     Runs the ticket pre-sale from the first buyer until the last ticket is
     sold, reporting the number of tickets remaining after every purchase.
