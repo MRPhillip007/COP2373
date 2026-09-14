@@ -79,7 +79,7 @@ def get_ticket_request(tickets_remaining, max_per_buyer):
 
     # Keep asking until the buyer gives an answer the pre-sale can accept.
     while True:
-        response = input(f"How many tickets would you like to purchase (1-{purchase_limit})? ")
+        response = input(f"Please enter the number of tickets you want to buy (1 to {purchase_limit}): ")
 
         # A buyer can type anything at all, so confirm the entry is a whole
         # number before treating it as a ticket count.
